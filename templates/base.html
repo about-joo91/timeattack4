@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form type="submit" method="post" action={% url 'product' %}>
+        {% csrf_token %}
+        <input type="checkbox" id="cold_brew" name="cold_brew" value="cold_brew">
+        <label for="cold_brew">콜드 브루 커피</label>
+        <input type="checkbox" id="brewed" name="brewed" value="brewed">
+        <label for="brewed">브루드 커피</label>
+        <input type="checkbox" id="espresso" name="espresso" value="espresso">
+        <label for="espresso">에스프레소</label>
+        <button type="submit">상품 보기</button>
+    </form>
+    {% block content %}{% endblock %}
+</body>
+
+</html>
