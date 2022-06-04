@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for drink in drinks %}
-    <div>{{ drink.name }}</div>
-    {% comment %} <img src={{ drink['img'] }}> {% endcomment %}
+    {% for drink_dict in drink_list %}
+        {% for key, value in drink_dict.items%}
+            <div>{{ key }}</div>
+            <img src={{ value }}>
+        {% endfor %}
     {% endfor %}
 {% endblock %}
